@@ -81,6 +81,12 @@ h1 {
     transform: scale(1.05);
 }
 
+button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 20px;

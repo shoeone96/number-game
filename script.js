@@ -4,13 +4,15 @@ let resultArea = document.getElementById('result-area');
 let resetButton = document.getElementById('reset-button');
 let chanceArea = document.getElementById('chance-area');
 let gameOver = false;
-let chance = 5;
+let chance = 3;
 let computerNum;
 let history = [];
 
 const pickRandomNum = () => {
     computerNum = Math.floor(Math.random() * 100) + 1;
     console.log(computerNum);
+
+    alert("정답: " + computerNum);
 };
 
 pickRandomNum();
@@ -22,7 +24,7 @@ function reset() {
     resultArea.textContent = '즐거운 게임에 초대합니다 :)';
     computerNum = pickRandomNum();
     playButton.disabled = false;
-    chance = 5;
+    chance = 3;
     chanceArea.textContent = '남은 찬스: 5번';
     history = [];
     userInput.value = '';
@@ -53,7 +55,6 @@ function play() {
         gameOver = true;
         alert('😢 아쉽지만 다음 기회에!');
         playButton.disabled = true;
-        reset();
     }
 }
 
